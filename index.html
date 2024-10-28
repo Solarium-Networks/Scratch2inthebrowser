@@ -2,17 +2,8 @@
 <html>
 <head>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        #flash-embed {
-            width: 100%;
-            height: 100%;
-        }
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+        #flash-embed { width: 100%; height: 100%; }
     </style>
 </head>
 <body>
@@ -30,6 +21,11 @@
 
         window.addEventListener('resize', resizeFlash);
         resizeFlash(); // Initial call to set dimensions on load
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const flashEmbed = document.getElementById('flash-embed');
+            flashEmbed.start();
+        });
     </script>
 </body>
 </html>
